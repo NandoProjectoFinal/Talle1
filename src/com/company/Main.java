@@ -6,6 +6,8 @@ import jdk.swing.interop.SwingInterOpUtils;
 import javax.swing.text.AbstractDocument;
 import java.util.Scanner;
 
+import static java.awt.SystemColor.menu;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,13 +16,15 @@ public class Main {
         int b = ingresoNum(a);
         numeroEntero(b);
         creadorarreglo(b);
+        imprimirNumBinario8Bits(creadorarreglo(b));
+//        arregloabinario();
 
-
-    imprimirNumBinario8Bits(creadorarreglo(b));
-
-   //     void imprimirNumDecimal(int numero)
 
     }
+
+    private static void arregloabinario() {
+    }
+
 
     private static void imprimirNumBinario8Bits(int[] arr) {
         System.out.println("El numero es:");
@@ -35,10 +39,10 @@ public class Main {
         for (int i=0; i<arr.length; i++) {
             int a = arr.length-1;
             if (ingresoNum % 2 == 0) {
-                arr[a]=0;
+                arr[a]=1;
             }
             else{
-                arr[a]=1;  }
+                arr[a]=0;  }
             a--;
         }
         return arr;
